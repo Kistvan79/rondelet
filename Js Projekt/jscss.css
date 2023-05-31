@@ -4,18 +4,19 @@
 
 
 .infotext {
+  color: rgb(255, 255, 255);
   font-size: 20px;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
-
-
 }
 
+.small {
+  color: rgb(0, 0, 0);
+  font-size: large;
+}
 
 .outputtext {
   font-size: 20px;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
-
-
 }
 
 
@@ -55,7 +56,7 @@
   font-size: 20px;
   width: 90%;
   border-radius: 5px;
-  border-color: rgb(0, 0, 0);
+  border-color: rgb(3, 104, 255);
   border-width: 2px;
 }
 
