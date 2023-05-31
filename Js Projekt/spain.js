@@ -1,12 +1,7 @@
 
-
 let mening1, mening2, mening3, mening4;
 
-let skicka, töm, output, audio;
-
-
-
-
+let skicka, töm, output, audio, bytspråk;
  
 window.addEventListener("load", init)
 
@@ -14,6 +9,7 @@ window.addEventListener("load", init)
 // restav 1 är första meningen utan det fyra första orden
 //Function som skriver ut i text ruttan
 function send(){ 
+
     första4 = mening1.value.split(" ").splice(0,4);
     restav1 = mening1.value.split (" ").splice(4,mening1.value.length)
     output.innerHTML = `${första4.join(" ").toUpperCase()}<br><br>${första4.join(" ")}
@@ -30,10 +26,8 @@ function send(){
     utterance.rate = 1 //hur snabbt talsyntes pratar
     utterance.volume = 0.8
     utterance.pitch = 5
-    speechSynthesis.speak(utterance); 
-    
+    speechSynthesis.speak(utterance);
   }
-  
 //functionen som låter audio spelas i backgrunden
 function playAudio() {
     audio = document.getElementById("myAudio");
@@ -42,7 +36,7 @@ function playAudio() {
   }
   document.addEventListener('DOMContentLoaded', playAudio);
 
-// funktionen tömmer text rutorna och 
+// funktionen tömmer text rutorna och avbryter talsyntes 
 function clear(){
     document.getElementsByClassName("form")[0].value = "";
     document.getElementsByClassName("form")[1].value = "";
@@ -59,11 +53,9 @@ function init(){
    mening3 = document.getElementsByClassName("form")[2]; 
    mening4 = document.getElementsByClassName("form")[3];
    
-   
    töm = document.getElementsByClassName("button")[0];
    töm.addEventListener("click", clear)
   
    skicka = document.getElementsByClassName("button")[1];
-   skicka.focus();
    skicka.addEventListener("click", send);
 }
