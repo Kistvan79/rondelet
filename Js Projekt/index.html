@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rondelet</title>
+
+    <link rel="stylesheet" href="jsCC.css">
+    <script src="spain.js"></script>
+</head>
+
+<body class="body">
+    <audio id="myAudio" autoplay>
+        <source src="Viva la france.mp3" type="audio/mp3">
+    </audio>
+    
+    <div class="Parent">
+        <div class="leftcol">
+            <h1>Rondelet</h1>
+            <p class="infotext">Mata in fyra meningar och få ut en rondelet! (<span>&#42;</span>)</p>
+            <form>
+                <input class="form" type="text" placeholder="Mening 1">
+            </form>
+            <form>
+                <input class="form" type="text" placeholder="Mening 2">
+            </form>
+            <form>
+                <input class="form" type="text" placeholder="Mening 3">
+            </form>
+            <form>
+                <input class="form" type="text" placeholder="Mening 4">
+            </form>
+            <button class="button" type="button">Töm!</button>
+            <button class="button" type="button">Skicka!</button>
+
+            <p>(<span>&#42;</span>) <b>Utmatning sker enligt följande</b></p>
+            <ol class="small">
+                <li>Textens fyra första ord med versaler</li>
+                <li>En tom rad</li>
+                <li>Textens fyra första ord</li>
+                <li>Resten av första meningen</li>
+                <li>Textens fyra första ord igen</li>
+                <li>Andra meningen</li>
+                <li>Tredje meningen</li>
+                <li>Fjärde meningen</li>
+                <li>Textens fyra första ord en sista gång</li>
+            </ol>
+
+        </div>
+        <div class="rightcol">
+            <p class="outputtext">Utmatning sker här...</p>
+        </div>
+    </div>
+</body>
+
+</html>
