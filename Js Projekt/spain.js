@@ -1,47 +1,40 @@
-console.log("Hello")
 
-let mening1;
-let mening2;
-let mening3;
-let mening4;
 
-let skicka;
-let töm;
-var output;
-let audio;
+let mening1, mening2, mening3, mening4;
+
+let skicka, töm, output, audio;
 
 
 
 
  
-window.addEventListener("load", function(){
-    init();
-})
+window.addEventListener("load", init)
 
-
+//Första4 är en sträng med det första fyra orden
+// restav 1 är första meningen utan det fyra första orden
+//Function som skriver ut i text ruttan
 function send(){ 
-    first4 = mening1.value.split(" ").splice(0,4);
-    restof1 = mening1.value.split (" ").splice(4,mening1.value.length)
-    output.innerHTML = `${first4.join(" ").toUpperCase()}<br><br>${first4.join(" ")}
-    <br>${restof1.join(" ")}<br>${first4.join(" ")}
-    <br>${mening2.value}<br>${mening3.value}<br>${mening4.value}<br>${first4.join(" ")}`
+    första4 = mening1.value.split(" ").splice(0,4);
+    restav1 = mening1.value.split (" ").splice(4,mening1.value.length)
+    output.innerHTML = `${första4.join(" ").toUpperCase()}<br><br>${första4.join(" ")}
+    <br>${restav1.join(" ")}<br>${första4.join(" ")}
+    <br>${mening2.value}<br>${mening3.value}<br>${mening4.value}<br>${första4.join(" ")}`
   
-
+// Är en speech API som är inbyggd i javascript. Den läser upp text.
     let utterance = new SpeechSynthesisUtterance(`
-    ${first4 + first4 + restof1
-    + first4 + mening2.value
+    ${första4 + första4 + restav1
+    + första4 + mening2.value
     + mening3.value + mening4.value 
-    + first4} `);
-    utterance.lang = "sv"
-    utterance.rate = 1
+    + första4} `);
+    utterance.lang = "sv" //språk på talsyntes
+    utterance.rate = 1 //hur snabbt talsyntes pratar
     utterance.volume = 0.8
     utterance.pitch = 5
-    speechSynthesis.speak(utterance);
-    voices = speechSynthesis.getVoices();
+    speechSynthesis.speak(utterance); 
     
   }
   
-
+//functionen som låter audio spelas i backgrunden
 function playAudio() {
     audio = document.getElementById("myAudio");
     audio.volume = 0.01
@@ -49,7 +42,7 @@ function playAudio() {
   }
   document.addEventListener('DOMContentLoaded', playAudio);
 
-
+// funktionen tömmer text rutorna och 
 function clear(){
     document.getElementsByClassName("form")[0].value = "";
     document.getElementsByClassName("form")[1].value = "";
@@ -68,12 +61,9 @@ function init(){
    
    
    töm = document.getElementsByClassName("button")[0];
-   töm.addEventListener("click", function(){
-    clear();
-   });
+   töm.addEventListener("click", clear)
   
    skicka = document.getElementsByClassName("button")[1];
    skicka.focus();
-   skicka.addEventListener("click", function(){ 
-    send();
-})};
+   skicka.addEventListener("click", send);
+}
