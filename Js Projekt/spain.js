@@ -1,7 +1,7 @@
 
 let mening1, mening2, mening3, mening4;
 
-let skicka, töm, output, audio, bytspråk;
+let skicka, töm, output, audio;
  
 window.addEventListener("load", init)
 
